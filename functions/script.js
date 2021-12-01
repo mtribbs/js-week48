@@ -44,3 +44,38 @@ function calcAge(age1, age2) {
     return resAge;
 }
 console.log(calcAge(20, 10));
+
+
+
+
+// FUNCTIONS DECLARATION AND EXPRESSION
+// declaration - can be called before it's declared in the code
+// expression - cannot be called before it's declared
+// hoisting 
+
+// FUNCTION DECLARATION 
+// hoisting allows functions to be safely called in the code before they are declared
+// execution context
+
+// calling for function, logs the right output withput giving error
+hoisted();
+
+// declaring funtion
+function hoisted() {
+    console.log("This is hoisted");
+}
+
+
+// FUNCTION EXPRESSION
+
+//console.log(notHoisted);
+
+//notHoisted(); //cannot call before declaration
+
+// function expression - function inside a variable
+// declare
+const notHoisted = function() {
+    console.log("This is not hoisted");
+}
+
+notHoisted(); // now we can call for the function, after it is declared
