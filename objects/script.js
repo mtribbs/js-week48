@@ -58,30 +58,74 @@
 
 
 
-const thereseObject = {
-    firstName: "Therese",
-    lastName: "Ranégie-Ribbås",
-    age: 2021 - 1992,
-    birthplace: "Gothenburg",
-    cats: ["Otto", "Santana"]
-};
+// const thereseObject = {
+//     firstName: "Therese",
+//     lastName: "Ranégie-Ribbås",
+//     age: 2021 - 1992,
+//     birthplace: "Gothenburg",
+//     cats: ["Otto", "Santana"]
+// };
 
-console.log(thereseObject);
+//console.log(thereseObject);
 
 // add properties to object 
-// . notation USE THIS
-thereseObject.eyeColor = "Green";
+// . notation USE THIS ONE
 
-thereseObject.husbandName = "Nicholas";
+// thereseObject.husbandName = "Nicholas";
 
 // [] notation
 // thereseObject["height"] = 175;
 
-console.log(thereseObject);
+//console.log(thereseObject);
 
 
 // Challenge!
 // Write a sentence in a dynamic way. Do not hardcode any of the information
 
-console.log(`Hi! My name is ${thereseObject.firstName} ${thereseObject.lastName} and I am ${thereseObject.age} years old. I live in ${thereseObject.birthplace} with my husband ${thereseObject.husbandName} and our ${thereseObject.cats.length} cats, ${thereseObject.cats[0]} and ${thereseObject.cats[1]}.`);
+// console.log(`Hi! My name is ${thereseObject.firstName} ${thereseObject.lastName} and I am ${thereseObject.age} years old. I live in ${thereseObject.birthPlace} with my husband ${thereseObject.husbandName} and our ${thereseObject.cats.length} cats, ${thereseObject.cats[0]} and ${thereseObject.cats[1]}.`);
 
+
+
+
+// THIS KEYWORD
+// cannot use this keyword in arrays
+
+// can create a function that is an object
+
+// not using "this"
+// const thereseObject = {
+//     firstName: "Therese",
+//     lastName: "Ranégie-Ribbås",
+//     birthYear: 1992,
+//     birthPlace: "Gothenburg",
+//     cats: ["Otto", "Santana"]
+//     hasDriversLicense: true,
+
+//     calcAge: function (birthYear) {
+//         return 2021 - birthYear;
+//     }
+// };
+
+
+// using "this" keyword instead BETTER!
+//"this" refers to the object
+
+const thereseObject = {
+    firstName: "Therese",
+    lastName: "Ranégie-Ribbås",
+    birthYear: 1992,
+    birthPlace: "Gothenburg",
+    husbandName: "Nicholas",
+    cats: ["Otto", "Santana"],
+    hasDriversLicense: true,
+
+    calcAge: function () {
+        console.log(this);
+        return 2021 - this.birthYear;
+    },
+    getSummary: function () {
+        return `My name is ${this.firstName} ${this.lastName} and I am ${this.calcAge()} years old. I live in ${this.birthPlace} with my husband ${this.husbandName} and our ${this.cats.length} cats, ${this.cats[0]} and ${this.cats[1]}. I have ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+    },
+};
+
+console.log(thereseObject.getSummary());
