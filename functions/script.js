@@ -116,3 +116,24 @@ const newYearsRetire = (birthYear, firstName) => {
 }
 
 // don't always use arrow function only when doing smalll and simple code
+
+
+
+// FUNCTIONS CALLING OTHER FUNCTIONS
+
+function slice(breakfast) {
+    return breakfast * 2;
+}
+
+// calling for the slice() function inside another function
+
+function makeSandwich(bread, cheese) {
+    const breadSclices = slice(bread);
+    const cheeseSlices = slice(cheese);
+
+    const sandwich = `I'm having ${breadSclices} slices of bread with ${cheeseSlices} slices of cheese for breakfast.`
+    return sandwich;
+}
+
+console.log(makeSandwich(2, 4));
+
