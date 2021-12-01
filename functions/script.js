@@ -40,8 +40,8 @@ console.log(yummyCake);
 
 
 function calcAge(age1, age2) {
-    const resAge = age1 + age2;
-    return resAge;
+     const resAge = age1 + age2;
+     return resAge;
 }
 console.log(calcAge(20, 10));
 
@@ -79,3 +79,40 @@ const notHoisted = function() {
 }
 
 notHoisted(); // now we can call for the function, after it is declared
+
+
+
+
+// ARROW FUNCTIONS
+
+// function expression
+
+const calcAgeOldWay = function(birthYear) {
+    return 2021 - birthYear;
+}
+
+// arrow funtion (also an expression)
+
+const calcAgeArrow = (birthYear) => 2021 - birthYear;
+
+// do not need to write return keyword, or block because it's not much code
+
+const age = calcAgeArrow(1992);
+console.log(age);
+
+//need a block and return keyword when we have more code
+
+const yearsUntilRetire = (birthday) => {
+    const age = 2021 - birthday;
+    const retire = 65 - age;
+    return retire;
+}
+
+const yearsLeft = yearsUntilRetire(1992);
+console.log(`You have ${yearsLeft} years until you can retire`);
+
+const newYearsRetire = (birthYear, firstName) => {
+
+}
+
+// don't always use arrow function only when doing smalll and simple code
