@@ -35,3 +35,12 @@ chocolateCake (1, 2, 3); //does not give any output
 
 const yummyCake = chocolateCake(1, 2, 3);
 console.log(yummyCake);
+
+// value of the parameters are called arguments
+
+
+function calcAge(age1, age2) {
+    const resAge = age1 + age2;
+    return resAge;
+}
+console.log(calcAge(20, 10));
